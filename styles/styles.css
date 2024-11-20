@@ -2,32 +2,30 @@
 
 /* Reset CSS */
 /* Universal selector (*) targets every element (regardless tag, class, ID) */
-* {
+*{
   margin: 0;
   padding: 0;
-  outline: 1px dashed #150505;
+  /* outline: 1px dashed #eb1313; */
 }
-
-html {
+html{
   font-size: 16px;
   box-sizing: border-box; /* 1 rem used on the page= 16px */
 }
 
-body {
+body{
   font-family: Arial, Helvetica, sans-serif;
   background-color: #fff;
 }
 
-a {
+a{
   text-decoration: none;
   color: inherit;
 }
 
 .container{
-    display: grid;
-    grid-template-columns: [full-start] 0.6fr [center-end center-start] 0.4fr [full-end];
-    grid-template-rows: repeat(6, min-content);
-
+  display: grid;
+  grid-template-columns: [full-start] 0.6fr [center-end center-start] 0.4fr [full-end];
+  grid-template-rows: repeat(6, min-content);
 }
 
 /* TODO */
@@ -36,7 +34,7 @@ a {
 /** ************************ **/
 
 /* Set up the navbar for the desktop */
-nav {
+nav{
   display: flex;
   grid-column: full-start / full-end;
   background-color: #fff;
@@ -44,92 +42,194 @@ nav {
   height: 4rem;
 }
 
-nav ul {
+nav ul{
   display: flex;
   list-style: none;
-}
-
-nav ul li {
-  align-content: center;
-  padding-right: 1rem;
-  padding-top: 1rem;
+  color: #aaa;
 }
 
 nav ul li:last-child{
-    padding-right: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 nav ul li a{
-    font-size: 0.75rem;
+  font-size: 0.75rem;
 }
 
 nav > a{
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 /* Set up logo styles */
 .logo{
-    height: 3rem;
-    margin-left: 1.5rem;
+  height: 3rem;
+  margin-left: 1.5rem;
 }
 
 .logoname{
-    text-transform: uppercase;
-    line-height: 2rem;
+  text-transform: uppercase;
+  line-height: 2rem;
 }
 
 .logoname-bold{
-    font-weight: bold;
-    color: #484848;
+  font-weight: bold;
+  color: #484848;
 }
 
 .logoname-light{
-    font-weight: lighter;
-    color: #aaa;
+  font-weight: lighter;
+  color: #aaa;
 }
 
 /* Set up navigation links' styles */
-
 /* Set up header area */
 header{
-    background-color: #d8d8d8;
-    display: flex;
+    display: flex;                  /* Enable flexbox layout  */
+    align-items: center;            /* Centers content vertically */
+    justify-content: center;        /* Center content horizontally */
+    background-color: #d8d8d8;      /* Set the bkgnd colour */  
 }
 
-header img{
-    width: 100%;
-    padding: 2rem 1.5rem;
+.imgcontainer{
+    padding: 2rem 1.5rem;           /* Render padding of the containter as required */
+}
+
+header > img{
+    max-width: 100%;                /* Set the max width img can take */
+    height: auto;                   /* Set img to maintain proportionality - aspect ratio*/
 }
 
 header > div{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 1.5rem;
+    flex-direction: column;         /* Set content in a single column*/
+    justify-content: space-evenly;  /* Center content horizontally */
+    height: 18rem;                 /* Adjust desired height of container */
+    padding-right: 2rem;         /* Created a right padding for right header */
 }
 
+
 header div > h1{
-    font-size: xx-large;
+  font-size: xx-large;
 }
 
 header div > h2{
-    font-size: large;
+  font-size: large;
 }
 
 header div > a{
-    display: block;
-    width: 100%;
-    background-color: #4a4a4a;
-    color: white;
-    text-align: center;
-    padding: 0.5rem 0;
+  display: block;
+  width: 100%;
+  background-color: #4a4a4a;
+  color: white;
+  text-align: center;
+  padding: 0.5rem 0;
 }
-
 
 /* hover effect for call to action link */
 
 /* Set up practice section */
 
+.practice{
+  display: flex; /* enable flexbox layout */
+  justify-content: flex-start; /* align content to the top */
+  flex-direction: column;
+}
+
+.practice > .imgcontainer > img{
+  max-width: 100%;
+  height: auto;
+}
+
+.practice .practice-text{
+  padding: 0 1.5rem;
+}
+
+.practice > .practice-text h1{
+  font-size: x-large;
+  padding-left: 1.5rem;
+}
+
+.practice > .practice-text p{
+  font-size: small;
+  font-weight: lighter;
+  padding: 1.5rem 1.5rem 0;
+}
+
+.practice > .practice-text > p > span{
+  display: block;
+  font-weight: bold;
+  padding: 2rem 0;
+}
+
+/* Set up events section */
+
+.events{
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  border-left: 1px solid #e7e7e7;
+}
+
+.events .events-block:first-child{
+  padding-top: 2rem;
+}
+
+.events .events-block{
+  display: grid;
+  grid-template-columns: 0.35fr 0.65fr;
+  align-items: center;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 1rem;
+}
+
+.events img{
+  width: 100%;
+  height: auto;
+}
+
+.events .events-text{
+  margin-left: 1rem;
+  border: 1px solid black;
+  height: 100%;
+  align-content: center;
+}
+
+.events .events-text h3{
+  font-size: large;
+}
+
+.events .events-text p{
+  font-size: small;
+}
+
+.events .events-text a{
+  font-size: small;
+  color: #7face7;
+
+}
+
+/* Set up footer */
+
+footer{
+  display: flex;
+  grid-column: full-start / full-end;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  border-top: 1px solid #e7e7e7;
+  padding: 1rem 1.5rem 2rem;
+}
+
+footer > ul{
+  list-style: none;
+  display: flex;
+}
+
+footer > ul > li{
+  margin-right: 0.5rem;
+}
+
+footer > ul > li > a{
+  color: #7face7;
+}
 /* Hide events mobile */
 
 /** ********************** **/
