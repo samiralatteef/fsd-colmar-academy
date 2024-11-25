@@ -92,27 +92,27 @@ nav > a {
 /* Set up navigation links' styles */
 /* Set up header area */
 header {
-  display: flex;  /* Enable flexbox layout  */
-  align-items: center;  /* Centers content vertically */
-  justify-content: center;  /* Center content horizontally */
-  background-color: #d8d8d8;  /* Set the bkgnd colour */
+  display: flex; /* Enable flexbox layout  */
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Center content horizontally */
+  background-color: #d8d8d8; /* Set the bkgnd colour */
 }
 
 .imgcontainer {
-  padding: 2rem 1.5rem;  /* Render padding of the containter as required */
+  padding: 2rem 1.5rem; /* Render padding of the containter as required */
 }
 
 header > img {
-  max-width: 100%;  /* Set the max width img can take */
-  height: auto;  /* Set img to maintain proportionality - aspect ratio*/
+  max-width: 100%; /* Set the max width img can take */
+  height: auto; /* Set img to maintain proportionality - aspect ratio*/
 }
 
 header > div {
   display: flex;
-  flex-direction: column;  /* Set content in a single column*/
-  justify-content: space-evenly;  /* Center content horizontally */
-  height: 18rem;  /* Adjust desired height of container */
-  padding-right: 2rem;  /* Created a right padding for right header */
+  flex-direction: column; /* Set content in a single column*/
+  justify-content: space-evenly; /* Center content horizontally */
+  height: 18rem; /* Adjust desired height of container */
+  padding-right: 2rem; /* Created a right padding for right header */
 }
 
 header div > h1 {
@@ -275,7 +275,6 @@ header div > a {
 .thesis-header {
   display: grid;
   grid-column: full-start/full-end;
-  background-color: #f3f5f5;
 }
 
 .thesis-header h1 {
@@ -386,7 +385,7 @@ footer > ul > li > a:hover {
 
 /* Hide nav, learning, and thesis for mobile */
 #nav-mobile,
-.learning-container,
+#column,
 #thesis-mobile {
   display: none;
 }
@@ -406,7 +405,6 @@ footer > ul > li > a:hover {
 
 /* if the width of screen is 640px and below (aka 40rem x 16px) */
 @media screen and (max-width: 40rem) {
-
   /* Hide the desktop nav, practice, thesis-text, exhibit, learning-card, thesis-header h1 class */
   nav,
   .practice,
@@ -415,6 +413,12 @@ footer > ul > li > a:hover {
   .learning-card,
   .thesis-header h1 {
     display: none;
+  }
+
+  .container {
+    display: block;
+    max-width: 100%;
+    border: 2px solid skyblue;
   }
 
   /* Display mobile nav */
@@ -452,7 +456,7 @@ footer > ul > li > a:hover {
   /* Set up the events for mobile */
   .events {
     display: grid;
-    grid-column: fullstart/full-end;
+    grid-column: full-start/full-end;
   }
 
   .events > .events-block {
@@ -477,7 +481,7 @@ footer > ul > li > a:hover {
 
   .events > .events-block > .events-img-mobile {
     display: block;
-    width: auto;
+    max-width: 100%;
     height: auto;
   }
 
@@ -491,17 +495,34 @@ footer > ul > li > a:hover {
   }
 
   /* Set up the learning for mobile */
-  .learning-container {
+  .learning {
     display: flex;
     flex-direction: column;
-    background-color: #eaebec;
+    background-color: white;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+  }
+  .learning > .learning-text h1 {
+    align-items: center;
+    font-size: xx-large;
+    color: #4a4a4a;
+    text-align: center;
+    padding: 2rem 0rem 1rem;
+  }
+
+  #column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200%;
+    gap: 0.5rem;
+    background-color: white;
   }
 
   .learning-box {
     background-color: #d8d8d8;
-    border: 0.5rem solid #eaebec;
-    color: #4a4a4a;
-    width: 300%;
+    color: #4a4a4ac5;
+    font-weight: lighter;
     padding: 1rem 0rem 1.5rem 1rem;
   }
 
@@ -510,7 +531,6 @@ footer > ul > li > a:hover {
     display: grid;
     grid-column: full-start/full-end;
     background-color: white;
-    border: 1px solid green;
   }
 
   #thesis-mobile h1 {
