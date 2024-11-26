@@ -108,7 +108,7 @@ header > img {
 }
 
 header > div {
-  display: flex;
+  display: flex; /* Enable flexbox layout  */
   flex-direction: column; /* Set content in a single column*/
   justify-content: space-evenly; /* Center content horizontally */
   height: 18rem; /* Adjust desired height of container */
@@ -126,7 +126,7 @@ header div > h2 {
 }
 
 header div > a {
-  display: block;
+  display: block; /* Enable block layout  */
   width: 100%;
   background-color: #4a4a4a;
   color: white;
@@ -134,7 +134,9 @@ header div > a {
   padding: 0.5rem 0;
 }
 
-/* hover effect for call to action link */
+header div > a:hover {
+  text-decoration: underline; /* hover effect for call to action link */
+}
 
 /* Set up practice section */
 .practice {
@@ -173,13 +175,13 @@ header div > a {
 
 /* Set up events section */
 .events {
-  display: grid;
+  display: grid; /* Enable grid layout  */
   grid-template-rows: repeat(3, min-content);
   border-left: 1px solid #e7e7e7;
 }
 
 .events .events-block {
-  display: grid;
+  display: grid; /* Enable grid layout  */
   grid-template-columns: 0.35fr 0.65fr;
   align-items: center;
   border-bottom: 1px solid #e7e7e7;
@@ -192,6 +194,12 @@ header div > a {
 }
 
 .events > .events-block > .events-text {
+  margin-left: 1rem;
+  height: 100%;
+  align-content: center;
+}
+
+.events > .events-block > .events-text-desktop {
   margin-left: 1rem;
   height: 100%;
   align-content: center;
@@ -222,9 +230,26 @@ header div > a {
   color: #7face7;
 }
 
+.events > .events-block > .events-text-desktop h3 {
+  font-size: large;
+  color: #4a4a4a;
+}
+
+.events > .events-block > .events-text-desktop p {
+  font-size: small;
+  font-weight: lighter;
+  color: #7b7b7b;
+  padding: 0.5rem 0rem;
+}
+
+.events > .events-block > .events-text-desktop a {
+  font-size: small;
+  color: #7face7;
+}
+
 /* Set up learning section */
 .learning {
-  display: grid;
+  display: grid; /* Enable grid layout  */
   grid-column: full-start/full-end;
   background-color: #eaebec;
   /* set background colour */
@@ -238,7 +263,7 @@ header div > a {
 }
 
 .learning > .learning-block {
-  display: grid;
+  display: grid; /* Enable grid layout  */
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   padding: 0rem 4.5rem 4.5rem;
@@ -273,7 +298,7 @@ header div > a {
 
 /* Set up thesis section */
 .thesis-header {
-  display: grid;
+  display: grid; /* Enable grid layout  */
   grid-column: full-start/full-end;
 }
 
@@ -285,11 +310,9 @@ header div > a {
 }
 
 .thesis {
-  display: flex;
-  /* Enable flexbox layout  */
+  display: flex; /* Enable flexbox layout  */
   justify-content: flex-start;
-  flex-direction: column;
-  /* Set content in a single column*/
+  flex-direction: column; /* Set content in a single column*/
   background-color: #f3f5f5;
   padding: 0rem 0.5rem 0rem 1.5rem;
 }
@@ -312,23 +335,20 @@ header div > a {
 
 /* Set up exhibit section */
 .exhibit {
-  display: grid;
+  display: grid; /* Enable grid layout  */
   grid-template-rows: repeat(2, min-content);
-  background-color: #f3f5f5;
-  /* set background colour */
+  background-color: #f3f5f5; /* set background colour */
 }
 
 .exhibit .exhibit-block:first-child {
   padding-top: 2rem;
-  background-color: #d8d8d8;
-  /* set background colour */
+  background-color: #d8d8d8; /* set background colour */
 }
 
 .exhibit .exhibit-block {
-  display: grid;
+  display: grid; /* Enable grid layout  */
   grid-template-columns: 0.35fr 0.65fr;
-  align-items: center;
-  /* Centers content vertically */
+  align-items: center; /* Centers content vertically */
   border-bottom: 1px solid #e7e7e7;
   padding: 1rem 0rem 1rem 1rem;
 }
@@ -341,8 +361,7 @@ header div > a {
 .exhibit > .exhibit-block > .exhibit-text {
   margin-left: 1rem;
   height: 100%;
-  align-content: center;
-  /* Centers content vertically */
+  align-content: center; /* Centers content vertically */
 }
 
 .exhibit > .exhibit-block > .exhibit-text h3 {
@@ -358,7 +377,7 @@ header div > a {
 
 /* Set up footer */
 footer {
-  display: flex;
+  display: flex; /* Enable flexbox layout  */
   grid-column: full-start / full-end;
   justify-content: space-between;
   font-size: 0.8rem;
@@ -380,12 +399,13 @@ footer > ul > li > a {
 }
 
 footer > ul > li > a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* hover effect for call to action link */
 }
 
 /* Hide nav, learning, and thesis for mobile */
 #nav-mobile,
-#column,
+.events-text-mobile,
+.learning-grid,
 #thesis-mobile {
   display: none;
 }
@@ -418,21 +438,20 @@ footer > ul > li > a:hover {
   .container {
     display: block;
     max-width: 100%;
-    border: 2px solid skyblue;
   }
 
   /* Display mobile nav */
   #nav-mobile {
-    display: flex;
+    display: flex; /* Enable flexbox layout  */
+    grid-column: full-start/full-end;
     align-items: center;
     justify-content: space-around;
-    grid-column: full-start/full-end;
     height: 4rem;
   }
 
   /* Set the header image to take up the entire viewport width */
   header {
-    display: grid;
+    display: grid; /* Enable grid layout  */
     grid-column: full-start/full-end;
   }
 
@@ -441,7 +460,7 @@ footer > ul > li > a:hover {
   }
 
   header > div {
-    display: block;
+    display: block; /* Enable block layout  */
     width: auto;
     height: auto;
     margin: auto;
@@ -455,14 +474,14 @@ footer > ul > li > a:hover {
 
   /* Set up the events for mobile */
   .events {
-    display: grid;
+    display: grid; /* Enable grid layout  */
     grid-column: full-start/full-end;
   }
 
   .events > .events-block {
-    display: flex;
+    display: flex; /* Enable flexbox layout  */
     flex-direction: column;
-    padding: 4rem 1rem 0 1rem;
+    padding: 0rem 1rem;
     border-bottom: none;
   }
 
@@ -471,7 +490,6 @@ footer > ul > li > a:hover {
   }
 
   .events > .events-block:last-child {
-    padding-bottom: 2rem;
     background-color: white;
   }
 
@@ -486,7 +504,7 @@ footer > ul > li > a:hover {
   }
 
   .events > .events-block > .events-text {
-    display: flex;
+    display: flex; /* Enable flexbox layout  */
     flex-direction: column;
     justify-content: space-evenly;
     width: 100%;
@@ -494,41 +512,67 @@ footer > ul > li > a:hover {
     padding: 1rem 0rem;
   }
 
+  .events-text-desktop {
+    display: none;
+  }
+  .events > .events-block > .events-text-mobile {
+    display: flex; /* Enable flexbox layout  */
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 5rem;
+    padding: 1rem 0rem 0rem 1rem;
+  }
+
+  .events > .events-block > .events-text-mobile h3 {
+    font-size: large;
+    color: #4a4a4a;
+  }
+
+  .events > .events-block > .events-text-mobile p {
+    font-size: small;
+    font-weight: lighter;
+    color: #7b7b7b;
+  }
+
+  .events > .events-block > .events-text-mobile a {
+    font-size: small;
+    color: #7face7;
+  }
+
   /* Set up the learning for mobile */
   .learning {
-    display: flex;
-    flex-direction: column;
     background-color: white;
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
   }
+
   .learning > .learning-text h1 {
     align-items: center;
     font-size: xx-large;
     color: #4a4a4a;
     text-align: center;
-    padding: 2rem 0rem 1rem;
   }
 
-  #column {
-    display: flex;
+  .learning-grid {
+    display: flex; /* Enable flexbox layout  */
     flex-direction: column;
-    justify-content: center;
-    width: 200%;
+    max-width: 100%;
     gap: 0.5rem;
+    padding: 0rem 1rem;
     background-color: white;
   }
 
   .learning-box {
     background-color: #d8d8d8;
-    color: #4a4a4ac5;
+    color: #4a4a4ad6;
     font-weight: lighter;
     padding: 1rem 0rem 1.5rem 1rem;
   }
 
   /* Set the thesis for mobile */
   #thesis-mobile {
-    display: grid;
+    display: grid; /* Enable grid layout  */
     grid-column: full-start/full-end;
     background-color: white;
   }
@@ -541,7 +585,7 @@ footer > ul > li > a:hover {
   }
 
   .thesis {
-    display: grid;
+    display: grid; /* Enable grid layout  */
     grid-column: full-start/full-end;
     background-color: white;
     padding: 0rem 0rem 2.5rem 0rem;
